@@ -1,0 +1,91 @@
+ <section class="vh-70">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 text-black">
+  
+          
+  
+          <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+  
+            <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" style="width: 23rem;">
+  
+              <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Book this Hall(RK HALL)</h3>
+
+              <div class="form-group row">
+                <label for="inputname" class="col-sm-2 col-form-label">Hall Name</label>
+                <div class="col-sm-10">
+                  <input type="text" formControlName="hallname"  id="uname" value="RK Party Hall" readonly ><br/>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputname" class="col-sm-2 col-form-label">Hall Price</label>
+                <div class="col-sm-10">
+                  <input type="text" formControlName="price"  id="uname" readonly  ><br/>
+                </div>
+              </div>
+  
+              <div class="form-group row">
+                <label for="inputname" class="col-sm-2 col-form-label">Booking Name</label>
+                <div class="col-sm-10">
+                  <input type="text"  formControlName="bookingname" class="form-control" id="uname" ><br/>
+                </div>
+              </div>
+  
+              <div class="form-group row">
+                <label for="inputname" class="col-sm-2 col-form-label">From date</label>
+                <div class="col-sm-10">
+                    <input type="date" min="{{minDate}}" (change)="checkOffer($event)" formControlName="fromdate" class="form-control" id="uname" required >
+                    <span class="text-danger"
+                    *ngIf="bookingForm.controls['fromdate'].invalid && bookingForm.controls['fromdate'].touched">*From Date
+                    is required
+                    </span> 
+                   </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="inputname" class="col-sm-2 col-form-label">To date</label>
+                <div class="col-sm-10">
+                    <input type="date" min="{{minDate}}" formControlName="todate" class="form-control" id="uname" required>
+                    <span class="text-danger"
+                    *ngIf="bookingForm.controls['todate'].invalid && bookingForm.controls['todate'].touched">*To Date
+                    is required
+                    </span> 
+                  </div>
+              </div>
+
+               <div class="form-group row">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Total Guest</label>
+              <div class="col-sm-10">
+                  <input type="number" class="form-control"  formControlName="totalguest"  id="phnno"  min="500" required max="700" required > 
+                  <br/>
+              </div>
+          </div>
+            <div class="form-group row">
+                <label for="inputname" class="col-sm-2 col-form-label">Services</label>
+                <div class="col-sm-10">
+                  <input type="text"  formControlName="services" class="form-control" id="uname" ><br/>
+                </div>
+              </div>
+              <div class="text-center">
+                <button (click)="book()" [disabled]="!bookingForm.valid" class="btn btn-primary">Confirm Booking</button>
+              <button type="reset" class="btn btn-danger ms-4">Reset</button><br/>
+           </div>
+  
+              
+  
+            </form>
+  
+          </div>
+  
+        </div>
+        <div class="col-sm-6 px-0 d-none d-sm-block mt-5">
+          <img src="../assets/mini.jpeg" alt="Login image" class="w-100 vh-80" style="object-fit:contain; object-position: left;">
+          <marquee width="100%" direction="left" height="10%" scrollamount="15">
+            <h1>Book Now and Get {{offerValue}}% Discount on Valentines Day</h1>
+          </marquee>
+        </div>
+      </div>
+    
+    </div>
+  </section>        
+

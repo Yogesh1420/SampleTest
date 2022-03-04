@@ -1,0 +1,42 @@
+<table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">User id</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Firstname</th>
+        <th scope="col">Lastname</th>
+        <th scope="col">Password</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone NO</th>
+        <th scope="col">Address</th>
+        <th scope="col">City</th>
+        <th scope="col">State</th>
+        <th></th>
+        <th></th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userdetails">
+        
+          <th scope="row"></th>
+          <td>{{ user.userid }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.firstname }}</td>
+          <td>{{ user.lastname }}</td>
+          <td>{{ user.password }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.address }}</td>
+          <td>{{ user.city }}</td>
+          <td>{{ user.state}}</td>
+      
+          
+          <td><button type="button"  *ngIf="cLoggedin()" class="btn btn-success" routerLink="/edituser/{{ user.userid }}"
+          >Update</button></td>
+          <td><button type="button" *ngIf="!cLoggedin()" (click)="onDelete(user)"  class="btn btn-danger">Clear</button></td>
+       
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: horizontal;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: right;
+  width: 50%;
+  
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 90%;
+    margin-top: 0;
+  }
+}
+.map-container{
+overflow:hidden;
+padding-bottom:56.25%;
+position:relative;
+height:0;
+}
+.map-container iframe{
+left: 0;
+top:0;
+height:100vh;;
+width:75%;
+position:absolute;
+}
+div.b {
+  text-align: left;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div style="text-align:center">
+    <h2>Contact Us</h2>
+    <p>Thanks for visiting our site,leave us your valuable message:</p>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img src="../assets/contact.jpg" style="width:100%" style="height: 641px;">
+    </div>
+    
+    <div class="column">
+      <form action="/action_page.php">
+        <label for="fname">Name</label>
+        <input type="text" id="fname" name="name" placeholder="Your name..">
+        <label for="lname">User Name</label>
+        <input type="text" id="lname" name="username" placeholder="Your  Username..">
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="australia">India</option>
+          <option value="canada">Other</option>
+        </select>
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit"> <br/>
+      </form>
+    </div>
+      <div class="row">
+        <div class="column">
+    <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+      <iframe src="https://maps.google.com/maps?q=chennai&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+      style="border:0" allowfullscreen></iframe>
+    </div>
+    </div> 
+    <div class="column">
+      <div class="b">
+     <h2><p><img src="../../assets/call.jpeg" style="width:75px" style="height: 75px;">&emsp;&emsp; 994563870</p></h2>
+    <br/>
+    <h2><p><img src="../../assets/mail.jpeg" style="width:65px" style="height: 75px;">&emsp;&emsp; hallmanagement21@gmail.com</p></h2>
+    <br/>
+    <h2><p><img src="../../assets/clock.jpeg" style="width:75px" style="height: 75px;">&emsp;&emsp; 24*7 Hours</p></h2>
+    <br/>
+    <h2><p><img src="../../assets/location.jpeg" style="width:75px" style="height: 75px;">&emsp;&emsp; No:12 Gandhi Salai,Chennai-600080</p></h2>
+  </div>
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>

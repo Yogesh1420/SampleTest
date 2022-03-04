@@ -1,0 +1,31 @@
+.card {
+    margin: 0 auto;
+    float: none; 
+    margin-bottom: 10px; 
+}
+h1{
+    text-align: center;
+}
+.imb-3{
+    padding:20px;
+}
+.card{    
+    background-color:green;
+}
+h2{
+    text-align: center;
+    padding: 20px;
+}
+.input-group{
+    padding: 15px;
+}
+button{
+    size: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+p{
+    text-align: right;
+}
+
+

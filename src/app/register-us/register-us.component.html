@@ -1,0 +1,117 @@
+<section class="vh-200 bg-image" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-2">Register Here</h2>
+
+              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+                <div class="form-outline mb-2">
+                  <label class="form-label" for="form3Example1cg"><b> Username</b></label>
+                  <input type="text" id="uname" formControlName="username" class="form-control form-control-lg" required />
+                </div>
+                
+                <div class="form-outline mb-2">
+                  <label class="form-label" for="form3Example1cg"><b> Firstname</b></label>
+                  <input type="text" id="form3Example1cg" formControlName="firstname" class="form-control form-control-lg" required/>
+                </div>
+                
+                <div class="form-outline mb-2">
+                  <label class="form-label" for="form3Example1cg"><b> Lastname</b></label>
+                  <input type="text" id="form3Example1cg" formControlName="lastname" class="form-control form-control-lg" required/>
+                </div>
+
+                <div class="form-outline mb-2">
+                  <label class="form-label" for="form3Example4cg"><b>Password</b></label>
+                  <input type="password" id="form3Example4cg" formControlName="password" class="form-control form-control-lg" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" minlength="8" />                
+                  <span class="text-danger"
+                  *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched">*Password
+                  is required
+                  </span>
+                 <span class="text-danger" *ngIf = " registerForm.controls['password'].hasError('minlength')">
+                   <br/>Password should contain 8 characters(Uppercase,Lowercase,Number & Special Character) </span>
+                </div>
+               
+                
+                <div class="form-outline mb-2">
+                  <label class="form-label" for="form3Example4cdg"><b>Email</b></label>
+                  <input type="text" id="form3Example4cdg" formControlName="email" class="form-control form-control-lg"  required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,3}$" />                
+                </div>
+
+                
+                <div class="form-outline mb-2">
+                  <label class="form-label" for="form3Example4cdg"><b>Phone</b></label>
+                  <input type="text" id="form3Example4cdg" formControlName="phone" class="form-control form-control-lg"  required pattern="[7-9]{1}[0-9]{9}" />
+                
+                </div>
+
+                
+                <div class="form-outline mb-2">
+                  <label class="form-label" for="form3Example4cdg"><b>Address</b></label>
+                  <input type="text" id="form3Example4cdg" formControlName="address" class="form-control form-control-lg" />
+                </div>
+                
+                <div class="form-outline mb-2">
+                  <label class="form-label" for="form3Example4cdg"><b>City</b></label>
+                  <input type="text" id="form3Example4cdg" formControlName="city" class="form-control form-control-lg" />
+                </div>
+
+                
+               
+
+                    <div class="form-outline mb-2">
+                      <label class="form-label " for="form3Example4cdg"><b>Choose State</b></label><br>
+                    <select class="select form-control-lg" formControlName="state">
+                      <option value="">State</option>
+                      <option value="Andhra Pradesh">Andhra Pradesh</option>
+                      <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                      <option value="Assam">Assam</option>
+                      <option value="Bihar">Bihar</option>
+                      <option value="Chhattisgarh">Chhattisgarh</option>
+                      <option value="Goa">Goa</option>
+                      <option value="Gujarat">Gujarat</option>
+                      <option value="Haryana">Haryana	</option>
+                      <option value="Himachal Pradesh	">Himachal Pradesh	</option>
+                      <option value="Jammu and Kashmir">Jammu and Kashmir	</option>
+                      <option value="Jharkhand">Jharkhand</option>
+                      <option value="Karnataka">Karnataka</option>
+                      <option value="Kerala">Kerala</option>
+                      <option value="Madhya Pradesh">Madhya Pradesh	</option>
+                      <option value="Maharashtra">Maharashtra</option>
+                      <option value="Manipur">Manipur</option>
+                      <option value="Meghalaya">Meghalaya</option>
+                      <option value="Mizoram">Mizoram</option>
+                      <option value="Nagaland">Nagaland</option>
+                      <option value="Odisha">Odisha	</option>
+                      <option value="Punjab">Punjab</option>
+                      <option value="Rajasthan">Rajasthan</option>
+                      <option value="Sikkim">Sikkim</option>
+                      <option value="Tamil Nadu">Tamil Nadu	</option>
+                      <option value="Telangana">Telangana</option>
+                      <option value="Tripura">Tripura</option>
+                      <option value="Uttar Pradesh">Uttar Pradesh	</option>
+                      <option value="Uttarakhand">Uttarakhand</option>
+                      <option value="West Bengal">West Bengal	</option>
+                    </select>
+                    
+                    </div>
+                 
+               
+
+                <div class="d-flex justify-content-center">
+                  <button (click)="addUser()" [disabled]="!registerForm.valid" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                </div>
+
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

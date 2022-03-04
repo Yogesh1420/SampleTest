@@ -1,0 +1,34 @@
+<table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">BookingId</th>
+        <th scope="col">HallName</th>
+        <th scope="col">HallPrice</th>
+        <th scope="col">BookingName</th>
+        <th scope="col">FromDate</th>
+        <th scope="col">ToDate</th>
+        <th scope="col">TotalGuest</th>
+        <th scope="col">Services</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of bookingdetails">
+        
+          <th scope="row"></th>
+         
+          <td>{{ book.bookingid }}</td>
+          <td>{{ book.hallname }}</td>
+          <td>{{ book.price }}</td>
+          <td>{{ book.bookingname }}</td>
+          <td>{{ book.fromdate| date:'MM-dd-YYYY' }}</td>
+          <td>{{ book.todate| date:'MM-dd-YYYY' }}</td>
+          <td>{{ book.totalguest }}</td>
+          <td>{{ book.services }}</td>
+      
+         <td> <button type="button" (click)="onDelete(book)"  class="btn btn-danger">Clear</button></td>
+       
+      </tr>
+    </tbody>
+  </table>
